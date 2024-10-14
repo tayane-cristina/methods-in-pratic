@@ -5,7 +5,6 @@ const DeleteItems = () => {
 
     const [items, setItems] = useState(["item 1", "item 2", "item 3", "item 4"]);
     const [values, setValues] = useState(["Valor 1", "Valor 2", "Valor 3", "Valor 4"]);
-    const [options, setOptions] = useState(["option 1","option 2", "option 3", "option 4"])
 
     const removeByIndex = (index) => {
         setItems(items.filter((item, i) => i !== index))
@@ -13,6 +12,10 @@ const DeleteItems = () => {
 
     const removeByValue = (value) => {
         setValues(values.filter((item) => item !== value))
+    }
+
+    const cleanList = () => {
+        setValues([])
     }
 
 return(
@@ -37,6 +40,8 @@ return(
                 </li>
             ))}
         </ul>
+
+        <button onClick={() => cleanList()}>Clean</button>
     </div>
 
 )
